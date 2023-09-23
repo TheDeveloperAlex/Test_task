@@ -19,6 +19,7 @@
 // getGenre();
 
 const puppeteer = require("puppeteer");
+const db = require("./server/db");
 
 const pageData = [];
 
@@ -141,8 +142,14 @@ const getData = async (resolve, reject, count) => {
 
 const runScript = async () => {
   await new Promise((r, j) => getData(r, j, 1));
-  console.log("finished");
-  console.log({ pageData, length: pageData.length });
+  // console.log("finished");
+  // console.log({ pageData, length: pageData.length });
+  pageData.map((item, i) => {
+    db.query(
+      "INSERT INTO sreality (price, locality, description, images) VALUES ($1::text, $2::text, $3::text, $4::text[]);",
+      [item.price, item.locality, item.description, item.images]
+    );
+  });
 };
 
 runScript();
