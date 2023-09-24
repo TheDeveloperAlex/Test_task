@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { openModal } from "../../state/notify/notifyState";
 import "./OfferItemSlider.css";
 
 type OfferItemSliderProps = {
@@ -42,17 +43,21 @@ export default function OfferItemSlider({ data, id }: OfferItemSliderProps) {
     dots: true,
   };
 
+  const onClick = (img: string) => {
+    openModal({ id: "images", data: img });
+  };
+
   return (
     <div className="offerItem-slider">
       <Slider {...settings}>
         {data.map((item, i) => {
           return (
-            <div>
+            <div key={`${id}_${item}`}>
               <div className="offerItem-slider-image-wrapper">
                 <img
-                  key={`${id}_${i}`}
                   src={item}
                   className={"offerItem-slider-image"}
+                  onClick={() => onClick(item)}
                 />
               </div>
             </div>

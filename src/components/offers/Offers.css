@@ -1,6 +1,14 @@
+.offers {
+  flex-grow: 1;
+}
+
+.main-header {
+  margin-bottom: 16px;
+  font-size: 45px;
+}
+
 .offers-grid {
-  max-width: 720px;
-  margin: 0 auto 24px auto;
+  margin-bottom: 24px;
 }
 
 .offers-grid > .offerItem:not(:last-child) {

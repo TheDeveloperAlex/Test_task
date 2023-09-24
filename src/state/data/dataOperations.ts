@@ -12,7 +12,6 @@ export async function getOffersData(page: number = 1) {
 export async function getAllPaginationPages() {
   const response = await fetch(`http://localhost:8080/api/sale/pages`);
   const result = await response.json();
-  console.log(result);
 
   setAllPaginationPages(result);
 }

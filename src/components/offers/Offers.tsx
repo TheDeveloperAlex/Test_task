@@ -17,15 +17,20 @@ export default function Offers() {
     fn: (state) => state.loading,
   });
 
-  console.log(data);
-
-  return loading ? (
-    <>Loading...</>
-  ) : (
-    <div className="offers-grid">
-      {data.map((item) => {
-        return <OfferItem key={item.id} {...item} />;
-      })}
+  return (
+    <div className={"offers"}>
+      {loading ? (
+        <>Loading...</>
+      ) : (
+        <>
+          <h1 className="main-header">Sales</h1>
+          <div className="offers-grid">
+            {data.map((item) => {
+              return <OfferItem key={item.id} {...item} />;
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 }
