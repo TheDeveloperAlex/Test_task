@@ -1,0 +1,30 @@
+.button-pagination {
+  background-color: transparent;
+  color: #333;
+  background-color: #ededed;
+  border-color: #b2b2b2;
+
+  border: 1px solid #b2b2b2;
+  cursor: pointer;
+
+  font-size: 16px;
+  line-height: 16px;
+  padding: 5px 10px;
+
+  border-radius: 3px;
+}
+
+.button-pagination:active {
+  border: 1px solid #b2b2b2;
+}
+
+.button-pagination-active {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.button-pagination-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

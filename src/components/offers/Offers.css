@@ -1,2 +1,12 @@
 .offers-grid {
+  max-width: 720px;
+  margin: 0 auto 24px auto;
+}
+
+.offers-grid > .offerItem:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.offers-item-border {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }

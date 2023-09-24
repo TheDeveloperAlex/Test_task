@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 
 import { useStoreMap } from "effector-react";
 import $mainSettings from "../../state/mainSettings/mainSettingsState";
-import { getOffersData } from "../../state/data/dataOperations";
+import {
+  getAllPaginationPages,
+  getOffersData,
+} from "../../state/data/dataOperations";
 
 export default function DataLayer() {
   const page = useStoreMap({
@@ -15,6 +18,10 @@ export default function DataLayer() {
   useEffect(() => {
     getOffersData(page);
   }, [page]);
+
+  useEffect(() => {
+    getAllPaginationPages();
+  }, []);
 
   return <></>;
 }

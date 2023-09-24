@@ -4,16 +4,18 @@ import Header from "./components/header";
 import Offers from "./components/offers";
 import Pagination from "./components/pagination";
 import DataLayer from "./components/dataLayer";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <Header />
-      <main>
+      <main className="container">
         <Offers />
         <Pagination />
         <DataLayer />
       </main>
+      <Footer />
     </div>
   );
 }

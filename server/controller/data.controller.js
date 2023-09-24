@@ -10,6 +10,12 @@ class DataController {
     );
     res.json(data.rows);
   }
+
+  async getPages(req, res) {
+    const data = await db.query("SELECT * FROM sreality");
+    const pages = data.rows.length / 20;
+    res.json(pages);
+  }
 }
 
 module.exports = new DataController();
