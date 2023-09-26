@@ -17,6 +17,15 @@ export default function Modal({ children, active, onClose }: offerItemProps) {
     }
   };
 
+  const body = typeof document !== "undefined" && document.body;
+
+  if (body && active) {
+    body?.classList?.add("body-overflow-hidden");
+  }
+  if (body && !active) {
+    body?.classList?.remove("body-overflow-hidden");
+  }
+
   return (
     <div className={classNameOverlay} onClick={wrapperClick}>
       <div className={classNameMOdal} onClick={(e) => e.stopPropagation()}>

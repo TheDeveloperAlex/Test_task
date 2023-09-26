@@ -1,6 +1,6 @@
 import React from "react";
 import { useStoreMap } from "effector-react";
-import $notify from "../../state/notify/notifyState";
+import $notify, { closeModal } from "../../state/notify/notifyState";
 import Modal from "../Ui/modal";
 import { getModalChildren } from "./modalChildren";
 
@@ -16,5 +16,9 @@ export default function Notify() {
     fn: (state) => state.id,
   });
 
-  return <Modal active={active}>{getModalChildren(id)}</Modal>;
+  return (
+    <Modal active={active} onClose={closeModal}>
+      {getModalChildren(id)}
+    </Modal>
+  );
 }
